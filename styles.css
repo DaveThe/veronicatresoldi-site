@@ -1929,7 +1929,7 @@ button:focus {
 /* Quiz FAB & Modal */
 .quiz-fab {
     position: fixed;
-    bottom: 30px;
+    bottom: 80px;
     right: 30px;
     width: 70px;
     height: 70px;
@@ -2114,7 +2114,7 @@ button:focus {
     }
 
     .quiz-fab {
-        bottom: 20px;
+        bottom: 76px;
         right: 20px;
         width: 60px;
         height: 60px;
