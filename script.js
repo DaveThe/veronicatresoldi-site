@@ -137,7 +137,14 @@ if (navbar) {
 }
 
 // Global Interactive Quiz Injection & Logic
-// Global Interactive Quiz Injection & Logic
+const DOCTOLIB_URL = 'https://www.doctolib.it/neuropsicomotricista/muggio/veronica-tresoldi/booking?source=external_referral&utm_campaign=quiz&utm_medium=referral&utm_source=veronica-tresoldi-website-button';
+
+// Conteggio eventi GoatCounter (attivo solo se lo script statistiche è caricato)
+function trackEvent(name, title) {
+    if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({ path: name, title: title || name, event: true });
+    }
+}
 document.addEventListener('DOMContentLoaded', () => {
     // Quiz Data Configuration
     const quizContent = {
@@ -206,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const quizHTML = `
             <button class="quiz-fab" id="open-quiz" aria-label="Apre il quiz per scoprire il percorso adatto">
                 <span class="icon" aria-hidden="true">
-                    <i class="fa-solid fa-compass"></i>
+                    <svg class="icon-svg" aria-hidden="true" focusable="false"><use href="/images/icons.svg#compass"></use></svg>
                 </span>
                 <span class="quiz-fab-label">Scopri il percorso più adatto</span>
             </button>
@@ -227,15 +234,15 @@ document.addEventListener('DOMContentLoaded', () => {
                             <h3 class="quiz-question">Quanti anni ha il tuo bambino?</h3>
                             <div class="quiz-options">
                                 <button class="quiz-option" data-age="0-2">
-                                    <span class="icon" aria-hidden="true"><i class="fa-solid fa-baby"></i></span>
+                                    <span class="icon" aria-hidden="true"><svg class="icon-svg" aria-hidden="true" focusable="false"><use href="/images/icons.svg#baby"></use></svg></span>
                                     <span>0 - 2 anni</span>
                                 </button>
                                 <button class="quiz-option" data-age="3-5">
-                                    <span class="icon" aria-hidden="true"><i class="fa-solid fa-child"></i></span>
+                                    <span class="icon" aria-hidden="true"><svg class="icon-svg" aria-hidden="true" focusable="false"><use href="/images/icons.svg#child"></use></svg></span>
                                     <span>3 - 5 anni</span>
                                 </button>
                                 <button class="quiz-option" data-age="6+">
-                                    <span class="icon" aria-hidden="true"><i class="fa-solid fa-school"></i></span>
+                                    <span class="icon" aria-hidden="true"><svg class="icon-svg" aria-hidden="true" focusable="false"><use href="/images/icons.svg#school"></use></svg></span>
                                     <span>Oltre i 6 anni</span>
                                 </button>
                             </div>
@@ -259,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="quiz-options">
                                 ${quizContent.expectations.map((exp, index) => `
                                     <button class="quiz-option" data-expectation-type="${exp.type}" data-expectation-label="${exp.label}">
-                                        <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
+                                        <span class="icon" aria-hidden="true"><svg class="icon-svg" aria-hidden="true" focusable="false"><use href="/images/icons.svg#chevron-right"></use></svg></span>
                                         <span style="font-size: 0.95rem;">${exp.text}</span>
                                     </button>
                                 `).join('')}
@@ -273,8 +280,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="quiz-step" id="quiz-result" aria-live="assertive">
                             <div class="quiz-result" style="text-align: center;">
                                 <div id="result-content"></div>
-                                <div class="cta-center" style="margin-top: 30px;">
-                                    <button class="btn btn-primary" id="result-cta">Richiedi disponibilità</button>
+                                <div class="cta-center quiz-result-ctas">
+                                    <a class="btn btn-primary" id="result-doctolib" href="${DOCTOLIB_URL}" target="_blank" rel="noopener">
+                                        <svg class="icon-svg" aria-hidden="true" focusable="false"><use href="/images/icons.svg#calendar-check"></use></svg> Prenota su Doctolib
+                                    </a>
+                                    <button class="btn btn-outline" id="result-cta">Preferisco scriverti prima</button>
                                 </div>
                                 <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 20px; font-style: italic;">
                                     "I risultati di questo quiz sono indicativi e basati sulla tua osservazione. Non sostituiscono una valutazione clinica. Durante il nostro primo contatto verificheremo insieme il percorso più idoneo."
@@ -352,6 +362,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+        function checkboxIcon(checked) {
+            const id = checked ? 'square-check' : 'square-regular';
+            return `<svg class="icon-svg" aria-hidden="true" focusable="false"><use href="/images/icons.svg#${id}"></use></svg>`;
+        }
+
         // Helper: Render Checklist for Step 2
         function renderChecklist(age) {
             checklistContainer.innerHTML = '';
@@ -362,8 +377,9 @@ document.addEventListener('DOMContentLoaded', () => {
             items.forEach(itemText => {
                 const btn = document.createElement('button');
                 btn.className = 'quiz-option';
+                btn.setAttribute('aria-pressed', 'false');
                 btn.innerHTML = `
-                    <span class="icon"><i class="fa-regular fa-square"></i></span>
+                    <span class="icon">${checkboxIcon(false)}</span>
                     <span>${itemText}</span>
                 `;
                 btn.addEventListener('click', () => toggleSymptom(btn, itemText));
@@ -374,13 +390,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Checklist Selection Logic
         function toggleSymptom(btn, text) {
             btn.classList.toggle('selected');
-            const icon = btn.querySelector('.icon i');
+            const selected = btn.classList.contains('selected');
+            btn.setAttribute('aria-pressed', selected);
+            btn.querySelector('.icon').innerHTML = checkboxIcon(selected);
 
-            if (btn.classList.contains('selected')) {
-                icon.className = 'fa-solid fa-square-check';
+            if (selected) {
                 selections.symptoms.push(text);
             } else {
-                icon.className = 'fa-regular fa-square';
                 selections.symptoms = selections.symptoms.filter(t => t !== text);
             }
 
@@ -419,6 +435,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p style="color:var(--text-light); line-height:1.6; font-size: 1.1rem;">${resultData.text}</p>
             `;
 
+            document.getElementById('result-doctolib').onclick = () => trackEvent('quiz-doctolib', 'Quiz: Doctolib (' + resultData.title + ')');
+
             // Setup CTA
             const resultCta = document.getElementById('result-cta');
             resultCta.onclick = () => {
@@ -430,11 +448,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     `Obiettivo Genitore: ${selections.expectationLabel}`
                 ].join('\n');
 
-                localStorage.setItem('quizResult', summary);
-                localStorage.setItem('recommendedService', resultData.title); // Use title for service field
+                trackEvent('quiz-contatto', 'Quiz: modulo contatti (' + resultData.title + ')');
+                try {
+                    localStorage.setItem('quizResult', summary);
+                    localStorage.setItem('recommendedService', resultData.title);
+                } catch (e) { /* storage non disponibile: si apre comunque il modulo */ }
 
-                const isSubdir = window.location.pathname.includes('/servizi/');
-                window.location.href = isSubdir ? '../contatti-e-prenotazioni.html' : 'contatti-e-prenotazioni.html';
+                window.location.href = '/contatti-e-prenotazioni';
             };
         }
 
@@ -450,8 +470,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 2. Contact Form Pre-filling logic
-    const quizResult = localStorage.getItem('quizResult');
-    const recommendedService = localStorage.getItem('recommendedService');
+    let quizResult = null;
+    let recommendedService = null;
+    try {
+        quizResult = localStorage.getItem('quizResult');
+        recommendedService = localStorage.getItem('recommendedService');
+    } catch (e) { /* storage non disponibile */ }
 
     if (quizResult && (window.location.pathname.includes('contatti') || document.querySelector('.contact-form-card'))) {
         const messageField = document.getElementById('message');
@@ -476,47 +500,59 @@ document.addEventListener('DOMContentLoaded', () => {
             const val = recommendedService.toLowerCase();
             if (val.includes('valutazione')) serviceField.value = 'valutazione';
             else if (val.includes('trattamento')) serviceField.value = 'trattamento';
-            else if (val.includes('supporto')) serviceField.value = 'parent-coaching'; // Common substitute
+            else if (val.includes('supporto')) serviceField.value = 'supporto';
         }
 
         // Clean up
-        localStorage.removeItem('quizResult');
-        localStorage.removeItem('recommendedService');
+        try {
+            localStorage.removeItem('quizResult');
+            localStorage.removeItem('recommendedService');
+        } catch (e) { /* storage non disponibile */ }
     }
 
     // 3. EmailJS Form Handling
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const statusEl = document.getElementById('form-status');
+        const originalBtnText = submitBtn.innerText;
+
+        const setStatus = (type, html) => {
+            statusEl.className = 'form-status form-status--' + type;
+            statusEl.innerHTML = html;
+        };
+
         contactForm.addEventListener('submit', function (event) {
             event.preventDefault();
 
-            // Show loading state on button
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerText;
+            // Campo trappola compilato: è un bot, fingiamo che sia andato tutto bene
+            if (contactForm.website && contactForm.website.value) {
+                contactForm.reset();
+                setStatus('success', 'Grazie! Il tuo messaggio è stato inviato.');
+                return;
+            }
+
             submitBtn.disabled = true;
             submitBtn.innerText = 'Invio in corso...';
+            setStatus('info', '');
 
-            // Parameters for EmailJS
-            const serviceID = 'service_grl7mok';
-            const templateID = 'template_cgp5o94';
-
-            emailjs.sendForm(serviceID, templateID, this)
+            emailjs.sendForm('service_grl7mok', 'template_cgp5o94', this)
                 .then(() => {
-                    submitBtn.innerText = 'Messaggio inviato!';
-                    submitBtn.style.backgroundColor = '#1a3d2e'; // Feedback success color
                     contactForm.reset();
-                    alert('Grazie! Il tuo messaggio è stato inviato correttamente. Ti risponderò il prima possibile.');
-
-                    // Reset button after 5 seconds
+                    submitBtn.innerText = 'Messaggio inviato!';
+                    setStatus('success', 'Grazie! Il tuo messaggio è stato inviato correttamente. Ti risponderò il prima possibile.');
+                    trackEvent('modulo-inviato', 'Modulo contatti inviato');
                     setTimeout(() => {
                         submitBtn.disabled = false;
                         submitBtn.innerText = originalBtnText;
-                        submitBtn.style.backgroundColor = '';
                     }, 5000);
                 }, (err) => {
+                    console.error('Invio modulo non riuscito', err);
                     submitBtn.disabled = false;
                     submitBtn.innerText = originalBtnText;
-                    alert('Si è verificato un errore durante l\'invio. Per favore riprova o scrivimi direttamente a veronicatresoldi.tnpee@gmail.com.\n\nErrore: ' + JSON.stringify(err));
+                    setStatus('error', 'Non sono riuscita a inviare il messaggio. Riprova tra poco oppure scrivimi a ' +
+                        '<a href="mailto:veronicatresoldi.tnpee@gmail.com">veronicatresoldi.tnpee@gmail.com</a> ' +
+                        'o chiamami al <a href="tel:+393534325291">353 432 5291</a>.');
                 });
         });
     }

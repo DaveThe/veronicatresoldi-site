@@ -1,104 +1,91 @@
 # Veronica Tresoldi - Neuropsicomotricista
 
-Sito statico per GitHub Pages di Veronica Tresoldi, terapista della neuro e psicomotricità dell'età evolutiva.
+Sito di [veronicatresoldi.it](https://veronicatresoldi.it), pubblicato con GitHub Pages dal branch `main`.
 
-## Struttura del sito
+## Come è fatto
+
+Le pagine sono HTML normale. GitHub Pages le passa attraverso **Jekyll** solo per due motivi:
+
+1. **Parti condivise** in `_includes/` (modificandole si aggiornano tutte le pagine):
+   - `head.html`: meta tag SEO, Open Graph, favicon, CSS
+   - `schema.html`: dati strutturati dello studio e di Veronica (indirizzo, orari, albo…)
+   - `nav.html`: menu (la voce attiva dipende da `nav:` nel front matter della pagina)
+   - `footer.html`: footer, pulsante Doctolib, script
+   - `icon.html`: icona dallo sprite `images/icons.svg`, es. `{% include icon.html name="phone" %}`
+2. **Esclusioni**: i file elencati in `_config.yml` sotto `exclude` restano nel repository ma non
+   vengono pubblicati (documentazione, `email_template.html`, `images/originali/`…).
+
+Ogni pagina inizia con un front matter:
+
+```yaml
+---
+nav: "faq"                  # voce di menu attiva
+title: "Titolo della pagina"
+description: "Descrizione per Google (150-160 caratteri)"
+preload_image: "/images/..." # immagine dell'intestazione
+updated: 2026-10-22          # data di ultima modifica, finisce nella sitemap
+---
+```
+
+`sitemap.xml` si genera da solo con tutte le pagine (tranne quelle con `noindex: true`).
+
+## Struttura
 
 ```
-├── index.html                    # Home page
-├── chi-sono.html                 # Pagina "Chi sono"
+├── _config.yml                    # impostazioni, link Doctolib/Google, esclusioni
+├── _includes/                     # parti condivise (vedi sopra)
+├── index.html                     # Home
+├── chi-sono.html
 ├── servizi/
-│   ├── index.html                # Pagina overview servizi
-│   ├── valutazione.html          # Servizio valutazione
-│   ├── trattamento.html          # Servizio trattamento
-│   └── supporto-genitoriale.html # Servizio supporto genitoriale
-├── contatti-e-prenotazioni.html  # Pagina contatti
-├── faq.html                      # Domande frequenti
-├── privacy-policy.html           # Privacy Policy (GDPR)
-├── cookie-policy.html            # Cookie Policy
-├── images/                       # Immagini e favicon
-├── styles.css                    # Stili CSS
-├── script.js                     # JavaScript per interattività
-├── sitemap.xml                   # Sitemap per SEO
-└── robots.txt                    # Robots.txt per crawler
+│   ├── index.html
+│   ├── valutazione.html
+│   ├── trattamento.html
+│   └── supporto-genitoriale.html
+├── contatti-e-prenotazioni.html   # modulo EmailJS
+├── faq.html
+├── privacy-policy.html
+├── cookie-policy.html
+├── 404.html
+├── styles.css
+├── script.js                      # menu, FAQ, quiz "Bussola Evolutiva", modulo contatti
+├── js/emailjs-4.4.1.min.js        # SDK EmailJS ospitato sul sito
+├── fonts/                         # Lato, Arvo, Merriweather (woff2, ospitati sul sito)
+├── images/
+│   ├── icons.svg                  # icone (Font Awesome Free, CC BY 4.0)
+│   └── originali/                 # foto ad alta risoluzione, NON pubblicate
+├── docs/                          # proposte da approvare (non pubblicate)
+├── ROADMAP.md                     # attività in sospeso (non pubblicato)
+└── email_template.html            # copia del template EmailJS (non pubblicato)
 ```
 
-## Design
+## Attività frequenti
 
-Il sito replica lo stile del sito originale Google Sites con:
+### Aggiungere o cambiare una foto
+1. Metti l'originale in `images/originali/`.
+2. Crea una versione ridimensionata in WebP (larghezza massima: 1920px per le intestazioni,
+   800px per le altre, più una da 400px per i telefoni) e mettila in `images/`.
+   Una foto pubblicata non dovrebbe superare circa 150 KB.
 
-- **Font:** Arvo (titoli), Lato (navigazione), Merriweather (testo)
-- **Colore primario:** Verde `#477560`
-- **Colori accent:** Rosa `#f2dede` e `#e8b5b5`
+### Modificare una FAQ
+Modifica la domanda nella pagina **e** nel blocco JSON-LD in cima a `faq.html`: Google vuole che
+coincidano.
 
-## Funzionalità
+### Modulo contatti (EmailJS)
+Service ID e template ID sono in `script.js`, la public key in `contatti-e-prenotazioni.html`.
+Il template email è nella dashboard EmailJS; `email_template.html` ne è una copia di riferimento.
 
-### SEO
-- ✅ Meta tag ottimizzati per ogni pagina
-- ✅ Open Graph e Twitter Cards
-- ✅ Schema.org structured data (JSON-LD)
-- ✅ Sitemap.xml
-- ✅ Robots.txt
+### Statistiche (GoatCounter, senza cookie)
+1. Crea un account gratuito su [goatcounter.com](https://www.goatcounter.com) (es. codice `veronicatresoldi`).
+2. Inserisci il codice in `_config.yml` → `goatcounter_code: "veronicatresoldi"`.
 
-### Accessibilità
-- ✅ ARIA labels
-- ✅ Focus styles per navigazione da tastiera
-- ✅ Breadcrumb strutturati (JSON-LD)
-
-### Conversioni
-- ✅ Pulsante WhatsApp fluttuante (aggiorna il numero in `393XXXXXXXXX`)
-- ✅ Sezione testimonianze
-- ✅ CTA chiari su ogni pagina
-
-### Legale
-- ✅ Privacy Policy conforme GDPR
-- ✅ Cookie Policy
-
-## Personalizzazione
-
-### Numero WhatsApp
-Aggiorna il numero WhatsApp in tutti i file HTML cercando:
-```html
-href="https://wa.me/393XXXXXXXXX?text=..."
-```
-Sostituisci `393XXXXXXXXX` con il numero reale (formato: 39 + numero senza spazi).
-
-### Testimonianze
-Le testimonianze nella home page sono esempi. Sostituiscile con recensioni reali dei genitori.
-
-### Immagini
-Le immagini attuali sono placeholder SVG. Per sostituirle con foto reali:
-
-1. Aggiungi le immagini nella cartella `images/`
-2. Aggiorna i riferimenti nei file HTML
-
-Formati consigliati:
-- Hero backgrounds: JPG/WebP, 1600x600px
-- Foto profilo: JPG/WebP, 400x500px  
-- Immagini servizi: JPG/WebP, 400x300px
+Vengono contati anche i click sui pulsanti Doctolib, sul quiz e l'invio del modulo.
+Non è stato usato Google Analytics: richiederebbe un banner cookie e il consenso preventivo.
 
 ## Sviluppo locale
 
-Per visualizzare il sito in locale:
-
 ```bash
-# Con Python 3
-python -m http.server 8000
-
-# Con Node.js (se installato npx)
-npx serve
+gem install jekyll
+jekyll serve
 ```
 
-Poi apri http://localhost:8000 nel browser.
-
-## Deploy su GitHub Pages
-
-1. Vai su Settings > Pages nel repository
-2. Seleziona la branch `main` come source
-3. Il sito sarà disponibile su `https://[username].github.io/veronicatresoldi-site/`
-
-## Note importanti
-
-- **Privacy Policy e Cookie Policy** sono template base. Rivedili con un avvocato prima della pubblicazione.
-- Il numero WhatsApp va aggiornato in tutti i file HTML.
-- Le testimonianze sono esempi - sostituiscile con recensioni reali.
+Poi apri http://localhost:4000.

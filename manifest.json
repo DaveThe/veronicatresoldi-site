@@ -1,10 +1,10 @@
 {
   "name": "Veronica Tresoldi - Neuropsicomotricista",
-  "short_name": "Veronica Tresoldi",
+  "short_name": "V. Tresoldi",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "theme_color": "#1a3d2e",
   "icons": [
     {
       "src": "/images/favicon-96x96.png",
@@ -21,5 +21,6 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "lang": "it"
 }

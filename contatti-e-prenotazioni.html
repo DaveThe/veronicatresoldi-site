@@ -1,145 +1,41 @@
+---
+nav: "contatti"
+title: "Contatti e Prenotazioni | Neuropsicomotricista a Muggiò (MB) - Veronica Tresoldi"
+description: "Prenota un appuntamento con Veronica Tresoldi, neuropsicomotricista a Muggiò (Monza e Brianza). Scrivimi, chiamami o prenota online su Doctolib."
+preload_image: "/images/contatti-faq-header.webp"
+updated: 2026-10-22
+---
 <!DOCTYPE html>
 <html lang="it">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO Meta Tags -->
-  <title>Contatti e Prenotazioni | Neuropsicomotricista Muggiò Monza - Veronica Tresoldi</title>
-  <meta name="description"
-    content="Prenota un appuntamento con Veronica Tresoldi, neuropsicomotricista a Muggiò (Monza e Brianza). Contattami via email per valutazioni, trattamenti e consulenze genitoriali.">
-  <meta name="keywords"
-    content="contatti neuropsicomotricista, prenotazione appuntamento, Muggiò, Monza, Brianza, Via Mazzini 5, Veronica Tresoldi, TNPEE">
-  <meta name="author" content="Veronica Tresoldi">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://veronicatresoldi.it/contatti-e-prenotazioni">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://veronicatresoldi.it/contatti-e-prenotazioni">
-  <meta property="og:title" content="Contatti e Prenotazioni | Veronica Tresoldi Neuropsicomotricista">
-  <meta property="og:description"
-    content="Prenota un appuntamento per valutazione neuropsicomotoria, trattamento o supporto genitoriale a Muggiò (MB).">
-  <meta property="og:locale" content="it_IT">
-
-  <!-- Favicon & PWA -->
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-  <link rel="icon" href="favicon.ico" sizes="any">
-
-  <!-- Fonts - Optimized async loading with font-display: swap -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Arvo:wght@400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap"
-    as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Arvo:wght@400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap">
-  </noscript>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Arvo:wght@400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap"
-    media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- Preload critical hero image -->
-  <!-- Preload critical hero image -->
-  <link rel="preload" href="images/contatti-faq-header.png" as="image" fetchpriority="high">
-  <link rel="preload" href="images/logo.png" as="image">
-
-  <!-- Schema.org -->
+{% include head.html %}
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"ContactPage",
-    "name":"Contatti e Prenotazioni - Veronica Tresoldi",
-    "description":"Pagina contatti per prenotare appuntamenti con la neuropsicomotricista Veronica Tresoldi",
-    "url":"https://veronicatresoldi.it/contatti-e-prenotazioni",
-    "mainEntity": {
-      "@type":"LocalBusiness",
-      "name":"Veronica Tresoldi - Neuropsicomotricista",
-      "email":"veronicatresoldi.tnpee@gmail.com",
-      "telephone":"+393534325291",
-      "address": {
-        "@type":"PostalAddress",
-        "streetAddress":"Via Mazzini 5",
-        "addressLocality":"Muggiò",
-        "postalCode":"20835",
-        "addressRegion":"MB",
-        "addressCountry":"IT"
-      },
-      "geo": {
-        "@type":"GeoCoordinates",
-        "latitude": 45.5945,
-        "longitude": 9.2298
-      }
-    }
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "url": "{{ site.url }}/contatti-e-prenotazioni",
+    "about": { "@id": "{{ site.url }}/#studio" }
   }
   </script>
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
     "itemListElement": [
-      {"@type":"ListItem","position": 1,"name":"Home","item":"https://veronicatresoldi.it"},
-      {"@type":"ListItem","position": 2,"name":"Contatti e prenotazioni","item":"https://veronicatresoldi.it/contatti-e-prenotazioni"}
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/"},
+      {"@type": "ListItem", "position": 2, "name": "Contatti e prenotazioni", "item": "{{ site.url }}/contatti-e-prenotazioni"}
     ]
   }
-  </script>
-  <!-- EmailJS SDK -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function () {
-      emailjs.init("8j9Vo1Q-WL1GQGUAp");
-    })();
   </script>
 </head>
 
 <body>
-  <!-- Skip to main content link for accessibility -->
-  <a href="#main-content" class="skip-link">Salta al contenuto principale</a>
-
-  <!-- Navigation -->
-  <nav class="navbar" aria-label="Navigazione principale">
-    <div class="container">
-      <div class="nav-brand">
-        <img src="images/logo.png" alt="Logo Veronica Tresoldi" width="40" height="40" fetchpriority="high"
-          loading="eager">
-        <a href="./">Veronica Tresoldi</a>
-      </div>
-      <button class="nav-toggle" aria-label="Apri menu di navigazione" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav-menu">
-        <li><a href="./" class="nav-link">Home page</a></li>
-        <li><a href="chi-sono" class="nav-link">Chi sono</a></li>
-        <li class="dropdown">
-          <a href="servizi/" class="nav-link" aria-haspopup="true" aria-expanded="false">Servizi
-            <span class="dropdown-arrow" aria-hidden="true">▼</span></a>
-          <ul class="dropdown-menu">
-            <li><a href="servizi/valutazione">Valutazione neuropsicomotoria</a></li>
-            <li><a href="servizi/trattamento">Trattamento neuropsicomotorio</a></li>
-            <li><a href="servizi/supporto-genitoriale">Supporto genitoriale</a></li>
-          </ul>
-        </li>
-        <li><a href="contatti-e-prenotazioni" class="nav-link active" aria-current="page">Contatti e
-            prenotazioni</a></li>
-        <li><a href="faq" class="nav-link">FAQ</a></li>
-        <li><a href="contatti-e-prenotazioni" class="btn btn-primary nav-cta">Richiedi valutazione</a></li>
-      </ul>
-    </div>
-  </nav>
+{% include nav.html %}
 
   <main id="main-content" tabindex="-1">
     <!-- Page Hero -->
-    <section class="page-hero" style="background-image: url('images/contatti-faq-header.png');"
+    <section class="page-hero" style="background-image: url('/images/contatti-faq-header.webp');"
       aria-labelledby="page-title">
       <div class="page-hero-content reveal">
         <h1 id="page-title" class="page-hero-title">Contatti e prenotazioni</h1>
@@ -162,7 +58,7 @@
             </p>
 
             <div class="contact-method">
-              <div class="icon-circle"><i class="fa-solid fa-envelope"></i></div>
+              <div class="icon-circle">{% include icon.html name="envelope" %}</div>
               <div>
                 <h3>Email</h3>
                 <p><a href="mailto:veronicatresoldi.tnpee@gmail.com">veronicatresoldi.tnpee@gmail.com</a>
@@ -171,7 +67,7 @@
             </div>
 
             <div class="contact-method">
-              <div class="icon-circle"><i class="fa-solid fa-phone"></i></div>
+              <div class="icon-circle">{% include icon.html name="phone" %}</div>
               <div>
                 <h3>Telefono</h3>
                 <p><a href="tel:+393534325291">+39 353 432 5291</a></p>
@@ -179,18 +75,30 @@
             </div>
 
             <div class="contact-method">
-              <div class="icon-circle"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="icon-circle">{% include icon.html name="location-dot" %}</div>
               <div>
                 <h3>Studio Professionale</h3>
-                <p>Via Mazzini 5, 20835 Muggiò (MB)<br>Lombardia, Italia</p>
+                <p>Via Mazzini 5, 20835 Muggiò (MB)<br>Lombardia, Italia<br>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=Via+Mazzini+5%2C+20835+Muggi%C3%B2+MB"
+                    target="_blank" rel="noopener">Apri in Google Maps</a></p>
               </div>
             </div>
 
             <div class="contact-method">
-              <div class="icon-circle"><i class="fa-solid fa-clock"></i></div>
+              <div class="icon-circle">{% include icon.html name="clock" %}</div>
               <div>
                 <h3>Orari di Ricevimento</h3>
                 <p>Lunedì - Venerdì: 16:30 - 20:00<br>Solo su appuntamento</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="icon-circle">{% include icon.html name="calendar-check" %}</div>
+              <div>
+                <h3>Prenotazione online</h3>
+                <p><a href="{{ site.doctolib_url | escape }}" target="_blank" rel="noopener"
+                    data-goatcounter-click="doctolib-contatti" data-goatcounter-title="Doctolib (contatti)">Scegli
+                    data e orario su Doctolib</a></p>
               </div>
             </div>
           </div>
@@ -200,11 +108,22 @@
             <form id="contact-form">
               <div class="form-group">
                 <label for="name">Nome del genitore</label>
-                <input type="text" id="name" name="name" placeholder="Inserisci il tuo nome" required>
+                <input type="text" id="name" name="name" placeholder="Inserisci il tuo nome" autocomplete="name"
+                  required>
               </div>
               <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="la-tua-email@esempio.it" required>
+                <input type="email" id="email" name="email" placeholder="la-tua-email@esempio.it"
+                  autocomplete="email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Telefono <span class="form-optional">(facoltativo)</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="Per essere richiamato/a" autocomplete="tel">
+              </div>
+              <!-- Campo trappola anti-spam: invisibile alle persone, i bot lo compilano -->
+              <div class="form-honeypot" aria-hidden="true">
+                <label for="website">Lascia vuoto questo campo</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
               </div>
               <div class="form-group">
                 <label for="service">Servizio di interesse</label>
@@ -219,17 +138,20 @@
                 <label for="message">Come posso aiutarti?</label>
                 <textarea id="message" name="message" placeholder="Descrivi brevemente le necessità di tuo figlio..."
                   required></textarea>
+                <p class="form-hint">Non serve indicare diagnosi o dati clinici dettagliati: ne parleremo di persona.</p>
               </div>
               <div class="form-group privacy-checkbox">
                 <label class="checkbox-container">
                   <input type="checkbox" name="privacy_consent" required>
                   <span class="checkmark"></span>
-                  Acconsento al trattamento dei dati personali secondo la <a href="privacy-policy"
-                    target="_blank">Privacy Policy</a>.
+                  Ho letto la <a href="/privacy-policy" target="_blank">Privacy Policy</a> e acconsento al
+                  trattamento dei dati inviati, comprese eventuali informazioni sulla salute di mio figlio, per
+                  ricevere una risposta.
                 </label>
               </div>
               <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px;">Invia
                 messaggio</button>
+              <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
             </form>
           </div>
         </div>
@@ -237,64 +159,11 @@
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <!-- Brand Column -->
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <img src="images/logo.png" alt="Logo Veronica Tresoldi" width="45" height="45">
-            <span>Veronica Tresoldi</span>
-          </div>
-          <p>Terapista della Neuro e Psicomotricità dell'Età Evolutiva. Specializzata nel supporto allo
-            sviluppo armonioso del bambino attraverso il gioco e l'empatia.</p>
-        </div>
-
-        <!-- Links Column -->
-        <div class="footer-column">
-          <h4>Link Rapidi</h4>
-          <ul class="footer-links">
-            <li><a href="./">Home Page</a></li>
-            <li><a href="chi-sono">Chi Sono</a></li>
-            <li><a href="servizi/">I Miei Servizi</a></li>
-            <li><a href="faq">Domande Frequenti</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact Column -->
-        <div class="footer-column">
-          <h4>Contatti</h4>
-          <div class="footer-contact-item">
-            <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
-            <p>Via Mazzini 5, 20835 Muggiò (MB)</p>
-          </div>
-          <div class="footer-contact-item">
-            <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-            <p><a href="mailto:veronicatresoldi.tnpee@gmail.com">veronicatresoldi.tnpee@gmail.com</a></p>
-          </div>
-          <div class="footer-contact-item">
-            <span class="icon"><i class="fa-solid fa-phone"></i></span>
-            <p><a href="tel:+393534325291">+39 353 432 5291</a></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Veronica Tresoldi. Tutti i diritti riservati. P.IVA IT11396360965</p>
-        <div class="footer-legal">
-          <a href="privacy-policy">Privacy Policy</a>
-          <a href="cookie-policy">Cookie Policy</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-
-  <script src="script.js"></script>
-  <!-- Doctolib -->
-  <a href="https://www.doctolib.it/neuropsicomotricista/muggio/veronica-tresoldi/booking?source=external_referral&amp;utm_campaign=website-button&amp;utm_content=withoutpreview-blue-floating-bottom-right&amp;utm_medium=referral&amp;utm_source=veronica-tresoldi-website-button&amp;utm_term=veronica-tresoldi" style="display:flex;text-align:center;background-color:#107ACA;color:#ffffff;font-size:14px;overflow:hidden;font-family:Roboto, sans-serif;box-sizing:border-box;align-items:center;padding:0 24px;z-index:1000;height:48px;text-decoration:none;position:fixed;bottom:16px;right:16px;border-bottom-left-radius:none;border-bottom-right-radius:none;border-top-left-radius:4px;border-top-right-radius:4px;border-radius:24px" target="_blank" rel="noopener"> <!-- -->Prenota un appuntamento online<!-- --> <img style="vertical-align:middle;width:auto;height:19px" src="https://pro.doctolib.it/external_button/doctolib-white-transparent.png" alt="Doctolib"/></a>
-
+{% include footer.html %}
+  <script src="/js/emailjs-4.4.1.min.js"></script>
+  <script>
+    emailjs.init({ publicKey: "8j9Vo1Q-WL1GQGUAp" });
+  </script>
 </body>
 
 </html>

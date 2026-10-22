@@ -1,0 +1,97 @@
+  <!-- Dati strutturati condivisi: studio, professionista e sito. Le pagine li richiamano tramite @id -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalBusiness",
+        "@id": "{{ site.url }}/#studio",
+        "name": "Veronica Tresoldi - Neuropsicomotricista",
+        "description": "Studio di terapia della neuro e psicomotricità dell'età evolutiva a Muggiò (Monza e Brianza): valutazione neuropsicomotoria, trattamento e supporto genitoriale.",
+        "url": "{{ site.url }}/",
+        "logo": "{{ site.url }}/images/logo.png",
+        "image": ["{{ site.url }}/images/veronica.webp", "{{ site.url }}/images/og-image.jpg"],
+        "email": "veronicatresoldi.tnpee@gmail.com",
+        "telephone": "+393534325291",
+        "priceRange": "€€",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Via Mazzini 5",
+          "addressLocality": "Muggiò",
+          "postalCode": "20835",
+          "addressRegion": "MB",
+          "addressCountry": "IT"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 45.5945,
+          "longitude": 9.2298
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Muggiò" },
+          { "@type": "City", "name": "Monza" },
+          { "@type": "AdministrativeArea", "name": "Provincia di Monza e della Brianza" }
+        ],
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "16:30",
+          "closes": "20:00"
+        },
+        "founder": { "@id": "{{ site.url }}/#veronica" },
+        "sameAs": [
+          "{{ site.google_review_url }}",
+          "https://www.doctolib.it/neuropsicomotricista/muggio/veronica-tresoldi"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "{{ site.url }}/#veronica",
+        "name": "Veronica Tresoldi",
+        "jobTitle": "Terapista della Neuro e Psicomotricità dell'Età Evolutiva (TNPEE)",
+        "description": "Neuropsicomotricista specializzata nello sviluppo infantile, nell'autismo e nei disturbi dello sviluppo. Parent Coach.",
+        "image": "{{ site.url }}/images/veronica.webp",
+        "url": "{{ site.url }}/chi-sono",
+        "email": "veronicatresoldi.tnpee@gmail.com",
+        "telephone": "+393534325291",
+        "worksFor": { "@id": "{{ site.url }}/#studio" },
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "Università degli Studi di Milano-Bicocca" },
+          { "@type": "CollegeOrUniversity", "name": "Università Vita-Salute San Raffaele" },
+          { "@type": "CollegeOrUniversity", "name": "Università degli Studi di Modena e Reggio Emilia" }
+        ],
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "Iscrizione all'albo professionale",
+            "name": "Albo TNPEE n. 578",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "Ordine TSRM e PSTRP di Milano, Como, Lecco, Lodi, Monza Brianza e Sondrio"
+            }
+          },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "Laurea in Terapia della Neuro e Psicomotricità dell'Età Evolutiva" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "Laurea Magistrale in Scienze Riabilitative delle Professioni Sanitarie" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certificate", "name": "Master in Autismo e Disturbi dello Sviluppo" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certificate", "name": "Master in Parent & Teen Coaching" }
+        ],
+        "knowsAbout": [
+          "Neuropsicomotricità dell'età evolutiva",
+          "Valutazione neuropsicomotoria",
+          "Sviluppo psicomotorio infantile",
+          "Disturbi dello spettro autistico",
+          "ADHD",
+          "Parent Coaching"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "{{ site.url }}/#website",
+        "name": "Veronica Tresoldi Neuropsicomotricista",
+        "url": "{{ site.url }}/",
+        "inLanguage": "it-IT",
+        "publisher": { "@id": "{{ site.url }}/#studio" }
+      }
+    ]
+  }
+  </script>

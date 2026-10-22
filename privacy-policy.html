@@ -1,82 +1,23 @@
+---
+nav: "privacy"
+title: "Privacy Policy | Veronica Tresoldi - Neuropsicomotricista"
+description: "Informativa sul trattamento dei dati personali del sito di Veronica Tresoldi, neuropsicomotricista a Muggiò (MB), ai sensi del GDPR."
+preload_image: "/images/contatti-faq-header.webp"
+updated: 2026-10-22
+---
 <!DOCTYPE html>
 <html lang="it">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO Meta Tags -->
-  <title>Privacy Policy | Veronica Tresoldi - Neuropsicomotricista</title>
-  <meta name="description"
-    content="Informativa sulla privacy di Veronica Tresoldi - Neuropsicomotricista. Trattamento dei dati personali secondo il GDPR.">
-  <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://veronicatresoldi.it/privacy-policy">
-
-    <!-- Favicon & PWA -->
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-  <link rel="icon" href="favicon.ico" sizes="any">
-
-  <!-- Fonts - Optimized async loading with font-display: swap -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Arvo:wght@400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap"
-    as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Arvo:wght@400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap">
-  </noscript>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Arvo:wght@400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap"
-    media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- Preload critical hero image -->
-  <link rel="preload" href="images/contatti-faq-header.png" as="image" fetchpriority="high">
-  <link rel="preload" href="images/logo.png" as="image">
+{% include head.html %}
 </head>
 
 <body>
-  <!-- Navigation -->
-  <nav class="navbar" aria-label="Navigazione principale">
-    <div class="container">
-      <div class="nav-brand">
-        <img src="images/logo.png" alt="Logo Veronica Tresoldi" width="40" height="40" fetchpriority="high"
-          loading="eager">
-        <a href="./">Veronica Tresoldi</a>
-      </div>
-      <button class="nav-toggle" aria-label="Apri menu di navigazione" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav-menu">
-        <li><a href="./" class="nav-link">Home page</a></li>
-        <li><a href="chi-sono" class="nav-link">Chi sono</a></li>
-        <li class="dropdown">
-          <a href="servizi/" class="nav-link" aria-haspopup="true" aria-expanded="false">Servizi
-            <span class="dropdown-arrow" aria-hidden="true">▼</span></a>
-          <ul class="dropdown-menu">
-            <li><a href="servizi/valutazione">Valutazione neuropsicomotoria</a></li>
-            <li><a href="servizi/trattamento">Trattamento neuropsicomotorio</a></li>
-            <li><a href="servizi/supporto-genitoriale">Supporto genitoriale</a></li>
-          </ul>
-        </li>
-        <li><a href="contatti-e-prenotazioni" class="nav-link">Contatti e prenotazioni</a></li>
-        <li><a href="faq" class="nav-link">FAQ</a></li>
-        <li><a href="contatti-e-prenotazioni" class="btn btn-primary nav-cta">Richiedi valutazione</a></li>
-      </ul>
-    </div>
-  </nav>
+{% include nav.html %}
 
-  <main class="legal-page">
+  <main id="main-content" class="legal-page" tabindex="-1">
     <!-- Page Hero -->
-    <section class="page-hero" style="background-image: url('images/contatti-faq-header.png');"
+    <section class="page-hero" style="background-image: url('/images/contatti-faq-header.webp');"
       aria-labelledby="page-title">
       <div class="page-hero-content reveal">
         <h1 id="page-title" class="page-hero-title">Privacy Policy</h1>
@@ -87,111 +28,99 @@
     <section class="section reveal">
       <div class="container">
         <div class="legal-content">
-          <span class="last-updated">Ultimo aggiornamento: Dicembre 2024</span>
+          <span class="last-updated">Ultimo aggiornamento: ottobre 2026</span>
 
-          <h2>1. Titolare del Trattamento</h2>
+          <h2>1. Titolare del trattamento</h2>
           <p>Il titolare del trattamento dei dati personali è:</p>
           <address
             style="font-family:'Lato', sans-serif; font-style: normal; margin-bottom: 20px; line-height: 1.6;">
-            <strong>Veronica Tresoldi</strong><br>
+            <strong>Veronica Tresoldi</strong> - P.IVA IT11396360965<br>
             Via Mazzini 5, 20835 Muggiò (MB)<br>
             Email: <a href="mailto:veronicatresoldi.tnpee@gmail.com"
-              style="color: var(--accent-color);">veronicatresoldi.tnpee@gmail.com</a>
+              style="color: var(--accent-color);">veronicatresoldi.tnpee@gmail.com</a><br>
+            Telefono: <a href="tel:+393534325291" style="color: var(--accent-color);">+39 353 432 5291</a>
           </address>
 
-          <h2>2. Dati Raccolti</h2>
-          <p>I dati personali raccolti tramite questo sito web includono:</p>
+          <h2>2. Quali dati raccogliamo</h2>
           <ul>
-            <li><strong>Dati di contatto:</strong> nome, cognome, indirizzo email, numero di telefono (se
-              fornito).</li>
-            <li><strong>Dati di navigazione:</strong> indirizzo IP, tipo di browser, pagine visitate
-              (tramite cookie tecnici).</li>
-            <li><strong>Dati sanitari:</strong> informazioni relative al bambino/utente fornite durante le
-              consulenze.</li>
+            <li><strong>Dati che mi invii volontariamente</strong> tramite il modulo di contatto, email o telefono:
+              nome, indirizzo email, numero di telefono (facoltativo), servizio di interesse e il testo del
+              messaggio.</li>
+            <li><strong>Informazioni sul bambino</strong> che decidi di includere nel messaggio o nelle risposte
+              al quiz "Bussola Evolutiva" (età e osservazioni sullo sviluppo). Possono rientrare tra i dati
+              relativi alla salute (art. 9 GDPR): ti chiedo di indicare solo lo stretto necessario. Diagnosi e
+              dati clinici verranno raccolti di persona.</li>
+            <li><strong>Dati tecnici di navigazione</strong> (indirizzo IP, tipo di browser, data e ora della
+              visita) registrati automaticamente dal servizio che ospita il sito, per motivi di sicurezza e di
+              funzionamento.</li>
+          </ul>
+          <p>Il quiz funziona interamente nel tuo browser: le risposte non vengono inviate a nessuno, a meno che tu
+            non scelga di riportarle nel modulo di contatto.</p>
+
+          <h2>3. Perché li trattiamo e su quale base giuridica</h2>
+          <ul>
+            <li><strong>Rispondere alle tue richieste</strong> di informazioni e appuntamento: misure
+              precontrattuali richieste da te (art. 6.1.b GDPR) e, per le informazioni sulla salute del bambino,
+              il tuo consenso esplicito (art. 9.2.a GDPR), espresso con la casella del modulo.</li>
+            <li><strong>Erogare le prestazioni</strong> di valutazione, trattamento e supporto genitoriale:
+              esecuzione del contratto e finalità di cura (art. 6.1.b e 9.2.h GDPR).</li>
+            <li><strong>Adempiere agli obblighi di legge</strong> (fiscali e sanitari): art. 6.1.c GDPR.</li>
+            <li><strong>Sicurezza e funzionamento del sito</strong>: legittimo interesse del titolare
+              (art. 6.1.f GDPR).</li>
           </ul>
 
-          <h2>3. Finalità del Trattamento</h2>
-          <p>I dati personali sono trattati per le seguenti finalità:</p>
+          <h2>4. Per quanto tempo</h2>
+          <p>I messaggi ricevuti tramite il sito sono conservati per il tempo necessario a gestire la richiesta e
+            comunque non oltre 12 mesi se non segue alcuna prestazione. Se inizia un percorso, i dati sono
+            conservati per la durata prevista dagli obblighi di legge (ad esempio 10 anni per la documentazione
+            fiscale).</p>
+
+          <h2>5. A chi vengono comunicati</h2>
+          <p>I dati non vengono venduti né diffusi. Per far funzionare il sito mi avvalgo di questi fornitori, che li
+            trattano per mio conto o come titolari autonomi:</p>
           <ul>
-            <li>Rispondere alle richieste di informazioni e prenotazioni.</li>
-            <li>Erogare servizi di valutazione, trattamento e supporto genitoriale.</li>
-            <li>Adempiere agli obblighi di legge in materia sanitaria.</li>
-            <li>Migliorare l'esperienza di navigazione del sito web.</li>
+            <li><strong>GitHub Pages</strong> (GitHub, Inc., USA): ospita il sito e registra i dati tecnici di
+              navigazione.</li>
+            <li><strong>EmailJS</strong> (emailjs.com): inoltra alla mia casella email i messaggi inviati con il
+              modulo di contatto.</li>
+            <li><strong>Google Gmail</strong> (Google Ireland Ltd): casella email in cui ricevo i messaggi.</li>
+            <li><strong>Doctolib</strong>: se prenoti online, vieni indirizzato al sito di Doctolib, che tratta i
+              tuoi dati come titolare autonomo secondo la propria informativa. Questo sito non trasmette dati a
+              Doctolib.</li>
+            <li><strong>GoatCounter</strong> (solo se le statistiche sono attive): conta le visite in forma
+              anonima e aggregata, senza cookie e senza identificare i visitatori.</li>
           </ul>
+          <p>Alcuni fornitori possono trattare dati fuori dall'Unione Europea. In questi casi il trasferimento avviene
+            sulla base delle garanzie previste dal GDPR (decisione di adeguatezza UE-USA "Data Privacy Framework" o
+            clausole contrattuali standard).</p>
+          <p>Font e icone del sito sono ospitati direttamente sul sito: la navigazione non comporta richieste a
+            Google Fonts o ad altri servizi esterni.</p>
 
-          <h2>4. Diritti dell'Interessato</h2>
-          <p>Ai sensi del GDPR (Regolamento UE 2016/679), l'interessato ha diritto ad accedere, rettificare o
-            cancellare i propri dati personali. Per esercitare questi diritti, è possibile contattare il
-            titolare all'indirizzo email sopra indicato.</p>
+          <h2>6. I tuoi diritti</h2>
+          <p>Puoi chiedere in qualsiasi momento l'accesso ai tuoi dati, la rettifica, la cancellazione, la
+            limitazione del trattamento, la portabilità, opporti al trattamento e revocare il consenso, senza
+            pregiudicare quanto fatto prima della revoca (artt. 15-22 GDPR). Scrivi all'indirizzo email indicato
+            sopra. Hai inoltre il diritto di proporre reclamo al
+            <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener"
+              style="color: var(--accent-color); text-decoration: underline;">Garante per la protezione dei dati
+              personali</a>.</p>
 
-          <p>Per informazioni dettagliate sull'uso dei cookie, consulta la <a href="cookie-policy"
+          <h2>7. Dati dei minori</h2>
+          <p>I dati relativi ai bambini vengono forniti e gestiti esclusivamente da chi esercita la responsabilità
+            genitoriale.</p>
+
+          <p>Per informazioni sui cookie e sulle tecnologie simili, consulta la <a href="/cookie-policy"
               style="color: var(--accent-color); text-decoration: underline;">Cookie Policy</a>.</p>
 
           <div class="cta-center" style="margin-top: 60px;">
-            <a href="./" class="btn btn-primary">Torna alla home</a>
+            <a href="/" class="btn btn-primary">Torna alla home</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <!-- Brand Column -->
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <img src="images/logo.png" alt="Logo Veronica Tresoldi" width="45" height="45">
-            <span>Veronica Tresoldi</span>
-          </div>
-          <p>Terapista della Neuro e Psicomotricità dell'Età Evolutiva. Specializzata nel supporto allo
-            sviluppo armonioso del bambino attraverso il gioco e l'empatia.</p>
-        </div>
-
-        <!-- Links Column -->
-        <div class="footer-column">
-          <h4>Link Rapidi</h4>
-          <ul class="footer-links">
-            <li><a href="./">Home Page</a></li>
-            <li><a href="chi-sono">Chi Sono</a></li>
-            <li><a href="servizi/">I Miei Servizi</a></li>
-            <li><a href="faq">Domande Frequenti</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact Column -->
-        <div class="footer-column">
-          <h4>Contatti</h4>
-          <div class="footer-contact-item">
-            <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
-            <p>Via Mazzini 5, 20835 Muggiò (MB)</p>
-          </div>
-          <div class="footer-contact-item">
-            <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-            <p><a href="mailto:veronicatresoldi.tnpee@gmail.com">veronicatresoldi.tnpee@gmail.com</a></p>
-          </div>
-          <div class="footer-contact-item">
-            <span class="icon"><i class="fa-solid fa-phone"></i></span>
-            <p><a href="tel:+393534325291">+39 353 432 5291</a></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Veronica Tresoldi. Tutti i diritti riservati. P.IVA IT11396360965</p>
-        <div class="footer-legal">
-          <a href="privacy-policy">Privacy Policy</a>
-          <a href="cookie-policy">Cookie Policy</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-  <!-- Doctolib -->
-  <a href="https://www.doctolib.it/neuropsicomotricista/muggio/veronica-tresoldi/booking?source=external_referral&amp;utm_campaign=website-button&amp;utm_content=withoutpreview-blue-floating-bottom-right&amp;utm_medium=referral&amp;utm_source=veronica-tresoldi-website-button&amp;utm_term=veronica-tresoldi" style="display:flex;text-align:center;background-color:#107ACA;color:#ffffff;font-size:14px;overflow:hidden;font-family:Roboto, sans-serif;box-sizing:border-box;align-items:center;padding:0 24px;z-index:1000;height:48px;text-decoration:none;position:fixed;bottom:16px;right:16px;border-bottom-left-radius:none;border-bottom-right-radius:none;border-top-left-radius:4px;border-top-right-radius:4px;border-radius:24px" target="_blank" rel="noopener"> <!-- -->Prenota un appuntamento online<!-- --> <img style="vertical-align:middle;width:auto;height:19px" src="https://pro.doctolib.it/external_button/doctolib-white-transparent.png" alt="Doctolib"/></a>
-
+{% include footer.html %}
 </body>
 
 </html>

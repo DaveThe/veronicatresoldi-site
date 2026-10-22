@@ -43,3 +43,8 @@ build/
 
 # Test coverage
 coverage/
+
+# Build locale Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata

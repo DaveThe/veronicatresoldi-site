@@ -1,0 +1,64 @@
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="/images/logo-96.webp" alt="" width="45" height="45" loading="lazy">
+            <span>Veronica Tresoldi</span>
+          </div>
+          <p>Terapista della Neuro e Psicomotricità dell'Età Evolutiva. Specializzata nel supporto allo
+            sviluppo armonioso del bambino attraverso il gioco e l'empatia.</p>
+          <p class="footer-albo">Iscritta all'Albo TNPEE dell'Ordine TSRM-PSTRP di Milano, Como, Lecco, Lodi,
+            Monza Brianza e Sondrio, n. 578</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Link Rapidi</h4>
+          <ul class="footer-links">
+            <li><a href="/">Home Page</a></li>
+            <li><a href="/chi-sono">Chi Sono</a></li>
+            <li><a href="/servizi/">I Miei Servizi</a></li>
+            <li><a href="/faq">Domande Frequenti</a></li>
+            <li><a href="/contatti-e-prenotazioni">Contatti e prenotazioni</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Contatti</h4>
+          <div class="footer-contact-item">
+            <span class="icon">{% include icon.html name="location-dot" %}</span>
+            <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Via+Mazzini+5%2C+20835+Muggi%C3%B2+MB" target="_blank" rel="noopener">Via Mazzini 5, 20835 Muggiò (MB)</a></p>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon">{% include icon.html name="envelope" %}</span>
+            <p><a href="mailto:veronicatresoldi.tnpee@gmail.com">veronicatresoldi.tnpee@gmail.com</a></p>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon">{% include icon.html name="phone" %}</span>
+            <p><a href="tel:+393534325291">+39 353 432 5291</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; {{ site.time | date: '%Y' }} Veronica Tresoldi. Tutti i diritti riservati. P.IVA IT11396360965</p>
+        <div class="footer-legal">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/cookie-policy">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Prenotazione online Doctolib -->
+  <a href="{{ site.doctolib_url | escape }}" class="doctolib-fab" target="_blank" rel="noopener"
+    data-goatcounter-click="doctolib-fab" data-goatcounter-title="Doctolib (pulsante fisso)">
+    {% include icon.html name="calendar-check" %}
+    <span>Prenota online <span class="doctolib-fab-brand">su Doctolib</span></span>
+  </a>
+
+  <script src="/script.js"></script>
+{%- if site.goatcounter_code != "" %}
+  <!-- Statistiche GoatCounter: senza cookie, nessun dato personale -->
+  <script data-goatcounter="https://{{ site.goatcounter_code }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+{%- endif %}

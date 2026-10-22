@@ -1,82 +1,16 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!-- Homepage -->
-    <url>
-        <loc>https://veronicatresoldi.it/</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    
-    <!-- Chi Sono -->
-    <url>
-        <loc>https://veronicatresoldi.it/chi-sono</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <!-- Servizi - Pagina principale -->
-    <url>
-        <loc>https://veronicatresoldi.it/servizi/</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <!-- Servizi - Valutazione -->
-    <url>
-        <loc>https://veronicatresoldi.it/servizi/valutazione</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- Servizi - Trattamento -->
-    <url>
-        <loc>https://veronicatresoldi.it/servizi/trattamento</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- Servizi - Supporto Genitoriale -->
-    <url>
-        <loc>https://veronicatresoldi.it/servizi/supporto-genitoriale</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- FAQ -->
-    <url>
-        <loc>https://veronicatresoldi.it/faq</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- Contatti e Prenotazioni -->
-    <url>
-        <loc>https://veronicatresoldi.it/contatti-e-prenotazioni</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- Privacy Policy -->
-    <url>
-        <loc>https://veronicatresoldi.it/privacy-policy</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    
-    <!-- Cookie Policy -->
-    <url>
-        <loc>https://veronicatresoldi.it/cookie-policy</loc>
-        <lastmod>2026-02-02</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
+{%- assign pages = site.html_pages | where_exp: "p", "p.noindex != true" | sort: "url" %}
+{%- for p in pages %}
+  <url>
+    <loc>{{ site.url }}{{ p.url | replace: 'index.html', '' | replace: '.html', '' }}</loc>
+{%- if p.updated %}
+    <lastmod>{{ p.updated }}</lastmod>
+{%- endif %}
+  </url>
+{%- endfor %}
 </urlset>

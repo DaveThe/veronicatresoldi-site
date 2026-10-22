@@ -1,0 +1,28 @@
+# Configurazione Jekyll per GitHub Pages.
+# Jekyll serve solo per due cose:
+#   1. componenti condivisi (header, footer, head) in _includes/
+#   2. escludere dalla pubblicazione i file di lavoro elencati sotto
+# Le pagine HTML restano HTML: nessun layout, nessun Markdown.
+
+url: "https://veronicatresoldi.it"
+lang: it
+
+# Dati usati da più pagine (_includes, dati strutturati)
+doctolib_url: "https://www.doctolib.it/neuropsicomotricista/muggio/veronica-tresoldi/booking?source=external_referral&utm_campaign=website-button&utm_medium=referral&utm_source=veronica-tresoldi-website-button"
+google_review_url: "https://share.google/7ST7BjH1kM1w3kOdv"
+# Codice GoatCounter (statistiche senza cookie). Lasciare vuoto per disattivarle.
+goatcounter_code: ""
+
+# File e cartelle che restano nel repository ma NON vengono pubblicati
+exclude:
+  - README.md
+  - AGENT_RULES.md
+  - PROPOSTA-MIGLIORAMENTO.md
+  - WCAG-ANALYSIS.md
+  - ROADMAP.md
+  - docs/
+  - email_template.html
+  - images/originali/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/

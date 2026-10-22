@@ -1,0 +1,36 @@
+{%- comment -%}
+  Menu principale. La voce attiva dipende da page.nav:
+  home, chi-sono, servizi, valutazione, trattamento, supporto, contatti, faq
+{%- endcomment -%}
+{%- assign servizi_nav = "servizi valutazione trattamento supporto" | split: " " -%}
+  <a href="#main-content" class="skip-link">Salta al contenuto principale</a>
+
+  <nav class="navbar" aria-label="Navigazione principale">
+    <div class="container">
+      <div class="nav-brand">
+        <img src="/images/logo-96.webp" alt="" width="40" height="40">
+        <a href="/">Veronica Tresoldi</a>
+      </div>
+      <button class="nav-toggle" aria-label="Apri menu di navigazione" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="/" class="nav-link{% if page.nav == 'home' %} active" aria-current="page{% endif %}">Home page</a></li>
+        <li><a href="/chi-sono" class="nav-link{% if page.nav == 'chi-sono' %} active" aria-current="page{% endif %}">Chi sono</a></li>
+        <li class="dropdown">
+          <a href="/servizi/" class="nav-link{% if servizi_nav contains page.nav %} active{% endif %}"{% if page.nav == 'servizi' %} aria-current="page"{% endif %} aria-haspopup="true" aria-expanded="false">Servizi
+            <span class="dropdown-arrow" aria-hidden="true">▼</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/servizi/valutazione"{% if page.nav == 'valutazione' %} class="active" aria-current="page"{% endif %}>Valutazione neuropsicomotoria</a></li>
+            <li><a href="/servizi/trattamento"{% if page.nav == 'trattamento' %} class="active" aria-current="page"{% endif %}>Trattamento neuropsicomotorio</a></li>
+            <li><a href="/servizi/supporto-genitoriale"{% if page.nav == 'supporto' %} class="active" aria-current="page"{% endif %}>Supporto genitoriale</a></li>
+          </ul>
+        </li>
+        <li><a href="/contatti-e-prenotazioni" class="nav-link{% if page.nav == 'contatti' %} active" aria-current="page{% endif %}">Contatti e prenotazioni</a></li>
+        <li><a href="/faq" class="nav-link{% if page.nav == 'faq' %} active" aria-current="page{% endif %}">FAQ</a></li>
+        <li><a href="/contatti-e-prenotazioni" class="btn btn-primary nav-cta">Richiedi valutazione</a></li>
+      </ul>
+    </div>
+  </nav>
